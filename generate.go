@@ -22,6 +22,10 @@ func main() {
 	flag.StringVar(&packageName, "package", "main", "Go package name to write text into")
 	flag.StringVar(&prefix, "prefix", "", "Go name prefix for generated variables/functions, eg. package.{prefix}EncodedText and package.{prefix}Text()")
 	flag.Parse()
+	if inFile == "" {
+		flag.Usage()
+		os.Exit(1)
+	}
 	raw, err := ioutil.ReadFile(inFile)
 	if err != nil {
 		fmt.Printf("unable to read input file: %v\n", err)

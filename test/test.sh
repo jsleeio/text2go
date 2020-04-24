@@ -1,8 +1,8 @@
 #!/bin/bash
 
-set -eu
+set -eu -o pipefail
 
-rm -f test.go test-text2go
+rm -f test.go test-text2go text2go
 
 cd "$(git rev-parse --show-toplevel)/test"
 

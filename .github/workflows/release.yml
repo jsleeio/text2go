@@ -18,6 +18,9 @@ jobs:
     - name: Unshallow
       run: git fetch --prune --unshallow
 
+    - name: Testing
+      run: test/test.sh
+
     - name: Set up Go
       uses: actions/setup-go@v1
       with:

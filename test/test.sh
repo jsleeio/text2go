@@ -7,7 +7,8 @@ rm -f test.go test-text2go
 cd "$(git rev-parse --show-toplevel)/test"
 
 input=../generate.go
-../text2go -input="$input" -output="test.go" -prefix=Test
+go build -o text2go ..
+./text2go -input="$input" -output="test.go" -prefix=Test
 go build -o test-text2go
 
 src="$(cat "$input")"
